@@ -37,7 +37,7 @@ def readfile(myfile):
             wordcount = len(wordlist)  #word count (REQUIRED)
             totwordcount = totwordcount + wordcount  # to account for possible multiple paragraphs in file
             #print(wordcount)
-            sentencelist = re.split("(?<=[.!?]) +", paragraph)    # thanks for the hint in the instrs!!
+            sentencelist = re.split("(?<=[.!?]) +", paragraph)   
             sentcount = len(sentencelist)
             totsentcount = totsentcount + sentcount
 
@@ -46,11 +46,10 @@ def readfile(myfile):
                 totlettercount = totlettercount + lettercount
             avglettercount = totlettercount / wordcount     # REQUIRED
 
-            #to determine avg sentence length..just divide wordcount by sentencecount
             avgsentencelength = wordcount / sentcount     # REQUIRED
 
 
-            if wordcount > 1:     # TO ACCOUNT FOR JUST A NEWLINE
+            if wordcount > 1:     
                 paragraphnum = paragraphnum + 1
                 print("\n#Paragraph Analysis")
                 print("#-----------------")
@@ -72,10 +71,10 @@ elif userinput == "2":
     readfile(chosenfile)
 elif userinput == "3":
     chosenfile = "AdamWayne.txt"
-    print("I'm actually 2 words off in my count. README.md says 122 words and so does Notepad++, I get 120!")
+    print("2 words off in my count. README.md says 122 words and so does Notepad++, I get 120!")
     readfile(chosenfile)
 else:
-    print("Pease pick a valid number for your file selection.  Please re run the program")
+    print("Please pick number for your file selection.  Please re-run the program")
     chosenfile = ""
     
 print("\nFinished!")
